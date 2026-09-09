@@ -134,13 +134,13 @@ export function ChannelComparison({
               <TableRow key={row.label}>
                 <TableCell className="text-sm text-muted-foreground">{row.label}</TableCell>
                 <TableCell
-                  className="text-center text-sm font-medium"
+                  className="text-center text-sm font-medium tabular-nums"
                   style={{ color: row.winner === "meta" ? "var(--status-success)" : undefined }}
                 >
                   {row.meta}
                 </TableCell>
                 <TableCell
-                  className="text-center text-sm font-medium"
+                  className="text-center text-sm font-medium tabular-nums"
                   style={{ color: row.winner === "seek" ? "var(--status-success)" : undefined }}
                 >
                   {row.seek}

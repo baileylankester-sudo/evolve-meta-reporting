@@ -34,12 +34,18 @@ function MetricCard({
   color: string
 }) {
   return (
-    <Card size="sm">
+    <Card
+      size="sm"
+      className="relative"
+      style={{
+        boxShadow: `inset 3px 0 0 0 ${color}, 0 1px 2px rgb(18 63 54 / 0.04), 0 10px 28px -10px rgb(18 63 54 / 0.1)`,
+      }}
+    >
       <CardHeader>
         <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{label}</p>
       </CardHeader>
       <CardContent>
-        <span className="font-heading text-2xl font-semibold" style={{ color }}>
+        <span className="font-heading text-3xl font-semibold tracking-tight" style={{ color }}>
           {value}
         </span>
       </CardContent>
@@ -84,15 +90,15 @@ export function KpiStrip({ data, color }: { data: SectorAdData; color: string })
 
       <Card
         size="sm"
-        className="border"
-        style={{ borderColor: "rgba(18,63,54,0.15)", backgroundColor: "#FAFAFA" }}
+        className="border-transparent"
+        style={{ backgroundColor: `color-mix(in srgb, ${color} 7%, var(--card))` }}
       >
         <CardHeader>
           <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Contact rate</p>
         </CardHeader>
         <CardContent className="flex flex-col gap-3">
           <div className="flex items-baseline justify-between">
-            <span className="font-heading text-[28px] font-semibold leading-none" style={{ color }}>
+            <span className="font-heading text-4xl font-semibold leading-none tracking-tight" style={{ color }}>
               {contactRate.rate}%
             </span>
             <span className="text-sm font-medium" style={{ color: "var(--status-danger)" }}>

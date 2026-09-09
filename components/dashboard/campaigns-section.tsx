@@ -87,9 +87,9 @@ export function CampaignsSection({
             <TableRow>
               <TableHead className="w-[2fr]">Campaign</TableHead>
               <TableHead>Consultant</TableHead>
-              <TableHead className="w-[80px]">Spend</TableHead>
-              <TableHead className="w-[80px]">Leads</TableHead>
-              <TableHead className="w-[80px]">CPL</TableHead>
+              <TableHead className="w-[80px] text-right">Spend</TableHead>
+              <TableHead className="w-[80px] text-right">Leads</TableHead>
+              <TableHead className="w-[80px] text-right">CPL</TableHead>
               <TableHead className="w-[100px]">Status</TableHead>
               <TableHead className="w-[100px]">Action</TableHead>
             </TableRow>
@@ -116,12 +116,14 @@ export function CampaignsSection({
                     </div>
                   </TableCell>
                   <TableCell className="text-sm text-muted-foreground">{campaign.consultant}</TableCell>
-                  <TableCell className="text-sm font-medium">${campaign.spend.toLocaleString()}</TableCell>
+                  <TableCell className="text-right text-sm font-medium tabular-nums">
+                    ${campaign.spend.toLocaleString()}
+                  </TableCell>
                   <TableCell>
-                    <div className="flex flex-col gap-1">
-                      <span className="text-sm font-medium">{campaign.leads}</span>
+                    <div className="flex flex-col items-end gap-1">
+                      <span className="text-sm font-medium tabular-nums">{campaign.leads}</span>
                       <span
-                        className="inline-flex items-center gap-0.5 text-xs font-medium"
+                        className="inline-flex items-center gap-0.5 text-xs font-medium tabular-nums"
                         style={{ color: momPositive ? "var(--status-success)" : "var(--status-danger)" }}
                       >
                         {momPositive ? <ArrowUpRight className="size-3" /> : <ArrowDownRight className="size-3" />}
@@ -129,7 +131,9 @@ export function CampaignsSection({
                       </span>
                     </div>
                   </TableCell>
-                  <TableCell className="text-sm font-medium">${campaign.cpl.toFixed(0)}</TableCell>
+                  <TableCell className="text-right text-sm font-medium tabular-nums">
+                    ${campaign.cpl.toFixed(0)}
+                  </TableCell>
                   <TableCell>
                     <Badge className="border-transparent" style={{ backgroundColor: statusStyle.bg, color: statusStyle.color }}>
                       {campaign.status}
