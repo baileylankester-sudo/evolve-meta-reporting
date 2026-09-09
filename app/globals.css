@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'proxima-nova', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: 'proxima-nova', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  --background: #fafafa;
+  --foreground: #123f36;
+  --card: #ffffff;
+  --card-foreground: #123f36;
+  --popover: #ffffff;
+  --popover-foreground: #123f36;
+  --primary: #123f36;
+  --primary-foreground: #e3fffa;
+  --secondary: #eef2f0;
+  --secondary-foreground: #123f36;
+  --muted: #fafafa;
+  --muted-foreground: #123f36;
+  --accent: #7fe5d1;
+  --accent-foreground: #123f36;
+  --destructive: #ed3e3e;
+  --destructive-foreground: #fff5f5;
+  --border: rgb(18 63 54 / 10%);
+  --input: rgb(18 63 54 / 16%);
+  --ring: #7fe5d1;
+  --chart-1: #e8631a;
+  --chart-2: #059669;
+  --chart-3: #2563eb;
+  --chart-4: #7c3aed;
+  --chart-5: #7fe5d1;
+  --radius: 0.5rem;
+  --sidebar: #123f36;
+  --sidebar-foreground: #e3fffa;
+  --sidebar-primary: #7fe5d1;
+  --sidebar-primary-foreground: #123f36;
+  --sidebar-accent: #1a4c40;
+  --sidebar-accent-foreground: #e3fffa;
+  --sidebar-border: rgb(227 255 250 / 12%);
+  --sidebar-ring: #7fe5d1;
+
+  /* Sector colours */
+  --sector-healthcare: #e8631a;
+  --sector-mining: #059669;
+  --sector-ena: #2563eb;
+  --sector-dnc: #7c3aed;
+
+  /* Status — traffic light */
+  --status-success: #57db7b;
+  --status-warning: #fdc06d;
+  --status-danger: #ed3e3e;
+
+  /* Surfaces */
+  --color-surface-subtle: #fafafa;
+  --color-surface-hover: #cff5ee;
+
+  /* Motion */
+  --ease: cubic-bezier(0.33, 1, 0.68, 1);
+  --duration-fast: 200ms;
+  --duration-default: 400ms;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    transition-timing-function: var(--ease);
+    transition-duration: var(--duration-fast);
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-color: #fcfcfc;
+    color: #123f36;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  [data-slot='card'] {
+    @apply bg-card rounded-xl;
+    border: 1px solid rgb(18 63 54 / 0.1);
+  }
+  [data-slot='badge'] {
+    @apply rounded-full;
+  }
+}
