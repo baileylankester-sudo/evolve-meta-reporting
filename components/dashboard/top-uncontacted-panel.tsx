@@ -11,7 +11,10 @@ export function TopUncontactedPanel({ candidates }: { candidates: OverviewUncont
       </CardHeader>
       <CardContent className="flex flex-col gap-2">
         {candidates.map((c) => (
-          <div key={c.id} className="flex items-center gap-3 rounded-lg border border-border p-3">
+          <div
+            key={c.id}
+            className="flex items-center gap-3 rounded-lg border border-border p-3 transition-colors hover:bg-muted/40"
+          >
             <Avatar size="sm">
               <AvatarFallback
                 style={{ backgroundColor: "rgba(237,62,62,0.15)", color: "var(--status-danger)" }}

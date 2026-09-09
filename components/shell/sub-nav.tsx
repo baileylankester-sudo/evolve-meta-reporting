@@ -44,7 +44,7 @@ export function SubNav() {
   }
 
   return (
-    <nav className="sticky top-[52px] z-40 flex h-9 items-center gap-5 overflow-x-auto border-b border-[rgba(18,63,54,0.08)] bg-[#FAFAFA] px-4 sm:px-6">
+    <nav className="sticky top-[52px] z-40 flex h-10 items-center gap-6 overflow-x-auto border-b border-border bg-background px-4 sm:px-6">
       {SECTIONS.map((section) => {
         const isActive = activeId === section.id
         return (
@@ -53,9 +53,9 @@ export function SubNav() {
             href={`#${section.id}`}
             onClick={handleClick(section.id)}
             className={
-              "shrink-0 border-b-2 py-2 text-xs font-medium transition-colors duration-200 ease-[cubic-bezier(0.33,1,0.68,1)] " +
+              "shrink-0 border-b-2 py-2.5 text-xs font-medium transition-colors duration-200 ease-[cubic-bezier(0.33,1,0.68,1)] " +
               (isActive
-                ? "border-[#7FE5D1] font-semibold text-[#123F36]"
+                ? "border-[color:var(--accent)] font-semibold text-foreground"
                 : "border-transparent text-muted-foreground hover:text-foreground")
             }
           >

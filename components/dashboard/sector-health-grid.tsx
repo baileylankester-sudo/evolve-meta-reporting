@@ -27,11 +27,14 @@ function SectorHealthCard({ sector }: { sector: OverviewSectorHealth }) {
   return (
     <Link href={`/${sector.key}`} className="block">
       <Card
-        className="h-full border-t-[3px] transition-shadow hover:shadow-sm"
-        style={{ borderTopColor: sector.color }}
+        className="h-full border-transparent transition-transform duration-200 hover:-translate-y-0.5"
+        style={{ backgroundColor: `color-mix(in srgb, ${sector.color} 6%, var(--card))` }}
       >
         <CardHeader className="gap-0.5 pb-1">
-          <span className="font-heading text-sm font-semibold">{sector.name}</span>
+          <span className="inline-flex items-center gap-2 font-heading text-sm font-semibold">
+            <span className="size-2 shrink-0 rounded-full" style={{ backgroundColor: sector.color }} />
+            {sector.name}
+          </span>
           <span className="text-xs text-muted-foreground">{sector.divisions.join(" · ")}</span>
         </CardHeader>
         <CardContent className="flex flex-col gap-3">

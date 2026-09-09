@@ -17,7 +17,7 @@ function UncontactedCard({ candidate }: { candidate: CandidateRef }) {
   const urgency = urgencyStyle(candidate.days)
   return (
     <div
-      className="flex items-center gap-3 rounded-lg border p-3"
+      className="flex items-center gap-3 rounded-lg border p-3 transition-colors hover:bg-muted/40"
       style={{ backgroundColor: urgency.bg, borderColor: urgency.border }}
     >
       <Avatar size="sm">
@@ -69,7 +69,7 @@ const VELOCITY_META: Record<InProgressCandidate["velocity"], { label: string; co
 function InProgressCard({ candidate, accent }: { candidate: InProgressCandidate; accent: string }) {
   const velocity = VELOCITY_META[candidate.velocity]
   return (
-    <div className="flex items-center gap-3 rounded-lg border border-border p-3">
+    <div className="flex items-center gap-3 rounded-lg border border-border p-3 transition-colors hover:bg-muted/40">
       <Avatar size="sm">
         <AvatarFallback style={{ backgroundColor: `${accent}26`, color: accent }}>
           {initials(candidate.name)}
@@ -132,7 +132,7 @@ export function InProgressPanel({
 
 function PlacedCard({ candidate }: { candidate: PlacedCandidate }) {
   return (
-    <div className="flex items-center gap-3 rounded-lg border border-border p-3">
+    <div className="flex items-center gap-3 rounded-lg border border-border p-3 transition-colors hover:bg-muted/40">
       <Avatar size="sm">
         <AvatarFallback style={{ backgroundColor: "rgba(87,219,123,0.18)", color: SUCCESS }}>
           {initials(candidate.name)}
